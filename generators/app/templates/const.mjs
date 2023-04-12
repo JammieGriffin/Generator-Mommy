@@ -10,5 +10,8 @@ const mysqlConf = {
   database: 'my db' // 数据库名称
 }
 
-export const db = mysql.createConnection(mysqlConf)
+export const usePool = () => {
+  const pool = mysql.createPool(mysqlConf);
+  return pool.promise();
+}
 

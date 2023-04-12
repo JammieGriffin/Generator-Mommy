@@ -1,11 +1,3 @@
-/*
- * @Author: taozhiyaoyao taozhiyaoyao9527@outlook.com
- * @Date: 2022-11-10 17:29:42
- * @LastEditors: taozhiyaoyao taozhiyaoyao9527@outlook.com
- * @LastEditTime: 2022-11-15 22:29:18
- * @FilePath: \generator-mommy\generators\app\index.js
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import Generator from "yeoman-generator";
 import fs from "fs-extra";
 import pkg from "./package-template.json" assert {type:"json"}
@@ -29,12 +21,7 @@ export default class extends Generator {
         message: "Please enter the name of the project author:(Default JammieGriffin)",
         default: "JammieGriffin"
       },
-      {
-        type: "list",
-        name: "license",
-        message: "Please select a license for the project:",
-        choices: ["MIT", "Apache", "Select later"]
-      },
+      
     ]);
     Object.assign(this.fields, fields)
   }
@@ -50,7 +37,6 @@ export default class extends Generator {
     this.log("Generating package.json ...");
     pkg.name = this.fields.name;
     pkg.author = this.fields.author;
-    pkg.license = this.fields.license === "Select latter" ? "" : this.fields.license;
     this.fs.writeJSON(this.destinationPath("package.json"), pkg)
   }
   ending() {
