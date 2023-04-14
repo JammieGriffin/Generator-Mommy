@@ -8,7 +8,7 @@ store.$state.field = "Generator Mommy";
     <h1>{{ store.$state.field }}</h1>
   </div>
 </template>
-<style scoped>
+<style scoped lang="scss">
 .container {
   width: 100vw;
   height: 100vh;
